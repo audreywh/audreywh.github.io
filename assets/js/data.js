@@ -143,7 +143,7 @@ window.SITE = {
     {
       slug: "fpga-display",
       order: 2,
-      title: "5-Bit FPGA Numeric Display",
+      title: "Two-Function Calculator",
       context: "Digital Logic and Computer Organization",
       dates: "",
       summary: "Gate-level Verilog decoders, adders, and a calculator on a Cyclone V FPGA.",
