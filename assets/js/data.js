@@ -8,7 +8,7 @@
        `slug` must be unique and match the detail page's filename.
     2. Copy entry-template.html into experience/ or projects/,
        rename it to <slug>.html, and fill in the write-up.
-  The Experience, Projects, and Resume pages update automatically.
+  The Experience and Projects pages update automatically.
 */
 
 window.SITE = {
@@ -23,22 +23,20 @@ window.SITE = {
   education: {
     school: "Cornell University",
     location: "Ithaca, New York",
-    degree: "B.S. Applied & Engineering Physics",
+    degree: "Intended B.S. in Applied & Engineering Physics",
     dates: "Expected 2029",
     coursework: [
-      "Mechanics & Special Relativity", "Multivariable Calculus", "Differential Equations",
-      "Electricity & Magnetism", "Experimental Physics", "Lasers & Photonics",
-      "Quantum Information Hardware", "Computer Science", "Linear Algebra",
-      "Waves & Oscillations", "Digital Logic & Computer Organization"
+      "Digital Logic & Computer Organization", "Computer Science", "Electricity & Magnetism",
+      "Experimental Physics", "Quantum Information Hardware", "Differential Equations",
+      "Linear Algebra", "Waves & Oscillations", "Lasers & Photonics",
+      "Multivariable Calculus", "Mechanics & Special Relativity"
     ]
   },
 
   skills: [
-    { group: "Programming & Data Analysis", items: "Python (NumPy, SciPy, Pandas, Matplotlib, Astropy, Qiskit), Java, Embedded C/C++, Git/GitHub, Linux, LaTeX" },
-    { group: "Digital & Embedded Systems", items: "Verilog, Quartus Prime, FPGA design, synthesis, simulation & verification, digital logic, CMOS transistor-level logic, ESP32 (Arduino framework), stepper motors, motor drivers" },
-    { group: "Hardware & Experimental Techniques", items: "Pulsed laser & optical systems, oscilloscopes, circuit prototyping & troubleshooting, schematic interpretation, soldering, electromechanical integration" },
-    { group: "CAD, Simulation & Fabrication", items: "SolidWorks, Ansys (FEA), lathe, mill, bandsaw (certified user)" },
-    { group: "Design & Visualization", items: "Blender, Adobe Photoshop, Premiere Pro, Lightroom, Illustrator" }
+    { group: "Hardware & Photonics", items: "SolidWorks, ANSYS (FEA), oscilloscopes, circuit prototyping & troubleshooting, pulsed laser systems, soldering, electromechanical integration" },
+    { group: "Digital & Embedded", items: "Verilog, Quartus Prime, FPGA synthesis & simulation, CMOS logic, ESP32, embedded C/C++" },
+    { group: "Programming & Analysis", items: "Python (NumPy, SciPy, Pandas, Matplotlib, Astropy, Qiskit), Java, Git/GitHub, Linux" }
   ],
 
   // Categories appear on the Experience page in this order.
@@ -50,7 +48,7 @@ window.SITE = {
       category: "Research",
       order: 1,
       title: "Cornell Quantum Computing Association",
-      role: "Theory & Decoding Subteam Member",
+      role: "Quantum Computing Researcher, Theory & Decoding Subteam",
       location: "Ithaca, New York",
       start: "Apr 2026", end: "Present",
       summary: "Quantum error-correction decoders and their FPGA implementations.",
@@ -98,7 +96,8 @@ window.SITE = {
         "Support students building and operating pulsed nitrogen lasers, including the pulse generator, pulse amplifier, and laser chassis.",
         "Help students assemble and troubleshoot circuits and laser hardware.",
         "Guide students in measuring laser pulses with oscilloscopes and photodiodes and in analyzing results and experimental uncertainty.",
-        "Enforce high-voltage and laser safety, supervise lab sessions, and give feedback on calculations, documentation, and assignments."
+        "Enforce high-voltage and laser safety, supervise lab sessions, and give feedback on calculations, documentation, and assignments.",
+        "Guide students through circuit analysis, electronic measurements, experimental troubleshooting, and laboratory calculations in discussions and office hours."
       ]
     },
     {

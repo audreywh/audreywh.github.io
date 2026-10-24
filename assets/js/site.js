@@ -13,14 +13,18 @@
   const when = e => e.dates !== undefined ? e.dates : `${e.start} – ${e.end}`;
 
   /* ---------- navigation + footer ---------- */
+  // The Resume tab opens the PDF in a new tab instead of a page.
   const NAV = [["about", "About"], ["experience", "Experience"], ["projects", "Projects"], ["resume", "Resume"], ["contact", "Contact"]];
+  const navLink = (k, l) => k === "resume"
+    ? `<a href="${root}${S.resumePdf}" target="_blank" rel="noopener">${l} ↗</a>`
+    : `<a href="${root}${k}.html"${k === page ? ' aria-current="page"' : ""}>${l}</a>`;
   const nav = $("#site-nav");
   if (nav) {
     nav.className = "site-nav";
     nav.innerHTML = `<div class="wrap">
       <a class="brand" href="${root}index.html">${esc(S.name)}</a>
       <button class="menu-btn" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
-      <ul>${NAV.map(([k, l]) => `<li><a href="${root}${k}.html"${k === page ? ' aria-current="page"' : ""}>${l}</a></li>`).join("")}</ul>
+      <ul>${NAV.map(([k, l]) => `<li>${navLink(k, l)}</li>`).join("")}</ul>
     </div>`;
     const btn = $(".menu-btn", nav);
     btn.addEventListener("click", () => {
@@ -100,28 +104,6 @@
       if (pn && list.length > 1) pn.innerHTML = `<a href="${prev.slug}.html"><small>Previous</small>← ${esc(prev.title)}</a><a href="${next.slug}.html" style="text-align:right"><small>Next</small>${esc(next.title)} →</a>`;
     }
   }
-
-  /* ---------- resume page ---------- */
-  const res = $("#resume-body");
-  if (res) {
-    const ed = S.education;
-    const item = (e, folder) => `<article class="r-item"><header><h3><a href="${root}${folder}/${e.slug}.html">${esc(e.title)}</a></h3><span class="when">${esc(when(e))}</span></header>
-      <div class="role">${esc(e.role || e.context)}${e.location ? " · " + esc(e.location) : ""}</div>
-      <ul>${e.bullets.map(x => `<li>${esc(x)}</li>`).join("")}</ul></article>`;
-    res.innerHTML = `
-      <h2>Education</h2>
-      <article class="r-item"><header><h3>${esc(ed.school)}</h3><span class="when">${esc(ed.dates)}</span></header>
-        <div class="role">${esc(ed.degree)} · ${esc(ed.location)}</div>
-        <ul><li>Relevant coursework: ${ed.coursework.map(esc).join("; ")}.</li></ul></article>
-      <h2>Research &amp; Technical Experience</h2>
-      ${[...S.experience].sort((a, b) => a.order - b.order).map(e => item(e, "experience")).join("")}
-      <h2>Selected Engineering Projects</h2>
-      ${[...S.projects].sort((a, b) => a.order - b.order).map(e => item(e, "projects")).join("")}
-      <h2>Technical Skills</h2>
-      <dl class="dl" style="margin-top:4px">${S.skills.map(s => `<div><dt>${esc(s.group)}</dt><dd>${esc(s.items)}</dd></div>`).join("")}</dl>`;
-  }
-  const pdf = $("#resume-pdf");
-  if (pdf) pdf.src = root + S.resumePdf + "#view=FitH";
 
   /* ---------- about page ---------- */
   const cw = $("#coursework");
