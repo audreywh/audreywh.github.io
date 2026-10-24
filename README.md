@@ -9,7 +9,6 @@ index.html            Home page with the Bloch sphere
 about.html            Bio, education, skills
 experience.html       Experience list (generated from data.js)
 projects.html         Project list (generated from data.js)
-resume.html           Web resume (generated from data.js) + PDF download
 contact.html          Email, LinkedIn, GitHub
 experience/*.html     One detail page per experience
 projects/*.html       One detail page per project
@@ -36,7 +35,7 @@ assets/
 3. In the new file, replace the `{{…}}` placeholders. Set `data-page` to `experience` or `projects` and `data-entry` to the slug.
 4. Add the page to `sitemap.xml`.
 
-The list pages, resume, facts sidebar, highlights, and previous/next links update on their own.
+The list pages, facts sidebar, highlights, and previous/next links update on their own.
 
 **Add photos:** put images in `assets/img/` and follow the comments in each detail page, or in `about.html` for your portrait. Aim for JPGs under ~300 KB.
 
