@@ -146,7 +146,7 @@ window.SITE = {
       title: "Two-Function Calculator",
       context: "Digital Logic and Computer Organization",
       dates: "",
-      summary: "Gate-level Verilog decoders, adders, and a calculator on a Cyclone V FPGA.",
+      summary: "A 16-bit add/multiply calculator in gate-level Verilog on a Cyclone V FPGA.",
       tools: ["Verilog", "Quartus Prime", "FPGA", "Verilator"],
       bullets: [
         "Implemented a gate-level Verilog display unit converting a 5-bit binary input (0–31) to two decimal digits on seven-segment displays, using binary-to-BCD and seven-segment decoders.",
