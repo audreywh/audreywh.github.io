@@ -37,7 +37,7 @@
     foot.className = "site-footer";
     foot.innerHTML = `<div class="wrap">
       <span>© ${new Date().getFullYear()} ${esc(S.name)} · Updated ${esc(S.updated)}</span>
-      <span class="links"><a data-link="email">Email</a><a data-link="linkedin">LinkedIn</a><a data-link="github">GitHub</a><a data-link="resume">Resume</a></span>
+      <span class="links"><a data-link="email">Email</a><a data-link="linkedin">LinkedIn</a><a data-link="github">GitHub</a></span>
     </div>`;
   }
 
