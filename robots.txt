@@ -1,0 +1,3 @@
+User-agent: *
+Disallow: /entry-template.html
+Sitemap: https://audreywh.github.io/sitemap.xml

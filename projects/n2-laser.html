@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Nitrogen Laser Pulse Amplifier · Audrey Horn</title>
+  <meta name="description" content="Audrey Horn's SCR pulse amplifier for a 337.1 nm nitrogen laser.">
+  <link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Hanken+Grotesk:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body data-root="../" data-page="projects" data-entry="n2-laser">
+  <header id="site-nav"></header>
+
+  <main class="wrap">
+    <div class="page-head" id="entry-head"></div>
+    <div class="entry-grid">
+      <article class="prose">
+        <h2>Overview</h2>
+        <p>A nitrogen laser fires when a high-voltage discharge passes through nitrogen gas, producing nanosecond pulses at 337.1 nm. The system has three cascaded stages: a pulse generator, a pulse amplifier, and a thyratron discharge chassis.</p>
+        <p>I built and tested the middle stage, the pulse amplifier, which turns a low-voltage timer trigger into a ~1.6 kV fast-rise pulse that fires the thyratron.</p>
+
+        <h2>Highlights</h2>
+        <div data-bullets></div>
+
+        <figure class="fig">
+          <a href="../assets/img/n2-laser-pulse-amplifier-schematic.png" target="_blank" rel="noopener"><img src="../assets/img/n2-laser-pulse-amplifier-schematic.png" alt="Schematic of the nitrogen laser pulse amplifier, from the transformer and 400 V supply through the SCR stage to the HV output" loading="lazy"></a>
+          <figcaption>The pulse amplifier I built: the ~400 Vdc supply, the NTE5416 SCR stage with its 1N914 turn-off network, the 1:4 pulse transformer, and the ~100:1 scope divider.</figcaption>
+        </figure>
+
+        <!-- Optional sections: uncomment and write as much as you like.
+        <h2>The challenge</h2>
+        <p></p>
+
+        <h2>What I learned</h2>
+        <p></p>
+        -->
+      </article>
+      <aside class="facts" id="entry-facts"></aside>
+    </div>
+    <nav class="pn" id="entry-pn" aria-label="More entries"></nav>
+  </main>
+
+  <footer id="site-footer"></footer>
+  <script src="../assets/js/data.js"></script>
+  <script src="../assets/js/site.js"></script>
+</body>
+</html>
