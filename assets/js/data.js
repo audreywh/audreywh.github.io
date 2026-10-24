@@ -36,7 +36,7 @@ window.SITE = {
   skills: [
     { group: "Hardware & Photonics", items: "SolidWorks, ANSYS (FEA), oscilloscopes, circuit prototyping & troubleshooting, pulsed laser systems, soldering, electromechanical integration" },
     { group: "Digital & Embedded", items: "Verilog, Quartus Prime, FPGA synthesis & simulation, CMOS logic, ESP32, embedded C/C++" },
-    { group: "Programming & Analysis", items: "Python (NumPy, SciPy, Pandas, Matplotlib, Astropy, Qiskit), Java, Git/GitHub, Linux" }
+    { group: "Programming & Analysis", items: "Python (NumPy, SciPy, Pandas, Matplotlib, Astropy, Qiskit), Java, Git/GitHub, Linux, MATLAB" }
   ],
 
   // Categories appear on the Experience page in this order.
@@ -48,7 +48,7 @@ window.SITE = {
       category: "Research",
       order: 1,
       title: "Cornell Quantum Computing Association",
-      role: "Quantum Computing Researcher, Theory & Decoding Subteam",
+      role: "Quantum Computing Researcher, Decoding Subteam",
       location: "Ithaca, New York",
       start: "Apr 2026", end: "Present",
       summary: "Quantum error-correction decoders and their FPGA implementations.",
@@ -70,7 +70,7 @@ window.SITE = {
       location: "Ithaca, New York",
       start: "Nov 2025", end: "Present",
       summary: "Coil-winding system and electromagnets for the pod's suspension.",
-      tools: ["ESP32", "Embedded C/C++", "SolidWorks", "Ansys"],
+      tools: ["ESP32", "Embedded C/C++", "SolidWorks", "Ansys", "MATLAB"],
       result: "5th place, Design division, European Hyperloop Week 2026",
       bullets: [
         "Designed, built, and debugged an ESP32-controlled coil-winding system using NEMA 17 steppers, DRV8825 drivers, and embedded C/C++ for repeatable electromagnet fabrication.",
@@ -128,7 +128,7 @@ window.SITE = {
       context: "Lasers and Photonics",
       dates: "",
       summary: "The SCR pulse stage that fires a hydrogen thyratron for a 337.1 nm laser.",
-      tools: ["High-voltage electronics", "SCRs", "Oscilloscope"],
+      tools: ["High-voltage electronics", "SCRs", "Oscilloscope", "Soldering"],
       result: "~10 ns lasing pulses",
       bullets: [
         "Built and tested the pulse amplifier for a 337.1 nm nitrogen laser, the middle of three cascaded subsystems (pulse generator → pulse amplifier → thyratron discharge chassis).",
