@@ -34,6 +34,7 @@ img { max-width: 100%; height: auto; display: block; }
 .name a { text-decoration: none; }
 .sub { margin: 6px 0 0; color: var(--mut); font-size: 14.5px; }
 .status { margin: 18px 0 0; font-size: 14px; padding-left: 10px; border-left: 2px solid var(--ink); }
+.status span { white-space: nowrap; }   /* keep each separator dot with the word before it */
 .side nav { margin-top: 26px; }
 .side nav a { display: block; text-decoration: none; color: var(--mut); padding: 5px 0; }
 .side nav a:hover, .side nav a[aria-current="true"] { color: var(--ink); }
