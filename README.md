@@ -1,49 +1,51 @@
-# Audrey Horn — personal website
+# Audrey Horn — portfolio
 
-A static site with no build step: plain HTML, CSS, and a little JavaScript. It runs on GitHub Pages as is.
+A static site in plain HTML, CSS, and JavaScript, with no build step. It runs on GitHub Pages as is.
 
-## Structure
+## Layout
+
+- **Sidebar** (every page): the dotted grand-piano emblem, name, program, status line, section links, icons (email, LinkedIn, GitHub, resume), and email address.
+- **Home:** intro, Experience and Projects lists (each row opens a detail page), and the Chladni plate panel.
+- **Detail pages:** the same sidebar, plus the write-up for one experience or project.
+
+## Files
 
 ```
-index.html            Home page with the Bloch sphere
-about.html            Bio, education, skills
-experience.html       Experience list (generated from data.js)
-projects.html         Project list (generated from data.js)
-contact.html          Email, LinkedIn, GitHub
+index.html            Home page
 experience/*.html     One detail page per experience
 projects/*.html       One detail page per project
-entry-template.html   Starting point for new detail pages
+entry-template.html   Starting point for a new detail page
 404.html              Shown for broken links
 assets/
-  css/style.css       All styles (colors and fonts are at the top)
-  js/data.js          ALL CONTENT: links, experience, projects, skills
-  js/site.js          Navigation, footer, lists, and detail-page wiring
-  js/bloch.js         The home-page Bloch sphere
-  img/                Favicon and your photos
+  css/style.css       All styles
+  js/data.js          ALL LIST CONTENT: titles, roles, dates, summaries, tools, highlights
+  js/site.js          Builds the lists and fills in detail pages from data.js
+  js/emblem.js        The dotted piano in the sidebar
+  js/chladni.js       The Chladni plate simulation
+  img/                Figures for detail pages
   Audrey-Horn-Resume.pdf
 ```
 
 ## Common edits
 
-**Update your resume PDF:** replace `assets/Audrey-Horn-Resume.pdf` and keep the same filename. If you change the name, also update `resumePdf` in `assets/js/data.js`.
+- **Intro or "Other interests":** edit `index.html` (the `lede` and `interests` paragraphs).
+- **Status line, links, or email in the sidebar:** the sidebar block is between `<!-- SIDEBAR -->` and `<!-- /SIDEBAR -->`. It's repeated in every page, so change it in `index.html` and in each detail page. A find-and-replace across the folder works well.
+- **Experience and projects:** edit `assets/js/data.js`. The home lists and detail pages update automatically.
+- **A detail page's overview or figures:** edit that page's HTML in `experience/` or `projects/`.
+- **New entry:** add a block to `data.js`, copy `entry-template.html` to `projects/<slug>.html` or `experience/<slug>.html`, and follow the note at its top. Then add the page to `sitemap.xml`.
+- **Resume:** replace `assets/Audrey-Horn-Resume.pdf`, keeping the same filename.
 
-**Add your GitHub link:** set `github: "https://github.com/your-username"` in `assets/js/data.js`. GitHub links stay hidden everywhere until it's set.
+## Accessibility
 
-**Add an experience or project:**
-1. In `assets/js/data.js`, copy an existing entry in `experience` or `projects` and edit it. Give it a unique `slug`, such as `"new-lab"`.
-2. Copy `entry-template.html` to `experience/new-lab.html` (or `projects/new-lab.html`).
-3. In the new file, replace the `{{…}}` placeholders. Set `data-page` to `experience` or `projects` and `data-entry` to the slug.
-4. Add the page to `sitemap.xml`.
-
-The list pages, facts sidebar, highlights, and previous/next links update on their own.
-
-**Add photos:** put images in `assets/img/` and follow the comments in each detail page, or in `about.html` for your portrait. Aim for JPGs under ~300 KB.
-
-**Change the accent color or fonts:** edit the variables at the top of `assets/css/style.css`.
+- A skip link, landmarks (aside, nav, main, footer), and one `h1` per page.
+- Text meets WCAG AA contrast. Focus outlines are visible, and touch targets are comfortably sized.
+- Icon links have text labels and say when they open a new tab.
+- The emblem is decorative and only moves in response to the cursor.
+- The Chladni plate has labeled note buttons, announces the current note and mode, describes its pattern in text, and has a Pause button. It stops animating while scrolled out of view.
+- With "reduce motion" turned on, the plate jumps straight to each settled pattern instead of animating, and the emblem stays still.
+- On phones, the sidebar becomes a compact header above the content.
 
 ## Preview locally
-
-From this folder, run:
 
 ```bash
 python3 -m http.server 8000
@@ -51,29 +53,6 @@ python3 -m http.server 8000
 
 Then open http://localhost:8000.
 
-## Deploy to GitHub Pages
+## Deploy
 
-1. Create a GitHub account if you don't have one.
-2. Create a new **public** repository named exactly `audreywh.github.io`, using your GitHub username. This gives you the clean address `https://audreywh.github.io`.
-3. Upload the contents of this folder to the repository root. The `index.html` file must sit at the top level, not inside a subfolder. Either:
-   - On GitHub, click **Add file → Upload files**, drag everything in, and commit; or
-   - Use git:
-     ```bash
-     git init
-     git add .
-     git commit -m "Initial site"
-     git branch -M main
-     git remote add origin https://github.com/audreywh/audreywh.github.io.git
-     git push -u origin main
-     ```
-4. In the repository, open **Settings → Pages**. Under **Build and deployment**, choose **Deploy from a branch**, then branch `main` and folder `/ (root)`, and save.
-5. After a minute or two, the site is live at `https://audreywh.github.io`.
-6. Replace `audreywh` in `sitemap.xml` and `robots.txt` with your username.
-
-The empty `.nojekyll` file tells GitHub Pages to serve the files as they are, so keep it.
-
-**Custom domain (optional):** buy a domain, add it under **Settings → Pages → Custom domain**, and follow GitHub's DNS instructions. Then update the URLs in `sitemap.xml` and `robots.txt`.
-
-## Privacy note
-
-The resume PDF includes your phone number. If you'd rather not publish it, upload a version without it.
+Upload the **contents** of this folder to the root of the `audreywh.github.io` repository, replacing the old site's files. Delete files from the old site that aren't here anymore (`about.html`, `contact.html`, `experience.html`, `projects.html`, and `assets/js/bloch.js`). Pages redeploys automatically.

@@ -127,6 +127,7 @@ window.SITE = {
       title: "Nitrogen Laser Pulse Amplifier",
       context: "Lasers and Photonics",
       dates: "",
+      year: "2026",          // shown in the project list
       summary: "The SCR pulse stage that fires a hydrogen thyratron for a 337.1 nm laser.",
       tools: ["High-voltage electronics", "SCRs", "Oscilloscope", "Soldering"],
       result: "~10 ns lasing pulses",
@@ -146,6 +147,7 @@ window.SITE = {
       title: "Two-Function Calculator",
       context: "Digital Logic and Computer Organization",
       dates: "",
+      year: "2026",          // shown in the project list
       summary: "A 16-bit add/multiply calculator in gate-level Verilog on a Cyclone V FPGA.",
       tools: ["Verilog", "Quartus Prime", "FPGA", "Verilator"],
       bullets: [
